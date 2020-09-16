@@ -1,6 +1,6 @@
 import React  from 'react';
 
-import { Container, Listing } from './styles';
+import { Container, FilterMenu, Listing } from './styles';
 
 function List() {
 
@@ -51,39 +51,35 @@ function List() {
 
 
   return (
-      <Container>
-          <div className="filter-menu">
-              <div className="row">
-                  <span>filtros</span>
-                  <select name="category">
+        <Container>
+            <FilterMenu>
+                <span>Filtros: </span>
+                <select name="category">
                     <option value>Todos</option>
                     <option value="">cachorros</option>
                     <option value="">gatos</option>
                     <option value="">hamsters</option>
-                  </select>
-              </div>
+                </select>
               <input type="text" className="search-input" placeholder="Digite sua cidade" />
-              <div className="row">
                 <span>Ordenar por:</span>
                 <select name="sort">
                     <option value>Mais recentes</option>
                     <option value>Mais antigas</option>
                 </select>
-              </div>
-          </div>
+            </FilterMenu>
 
-        <Listing>
-            { animals.map(animal => (
-                <li key={animal.id}>
-                    <img src={animal.image} alt={animal.id} />
-                    <div className="box">
-                        <strong>{animal.title}</strong>
-                        <strong>{animal.city}</strong>
-                    </div>
-                    <p>{animal.description}</p>
-                </li>
-            )) }
-        </Listing>
+            <Listing>
+                { animals.map(animal => (
+                    <li key={animal.id}>
+                        <img src={animal.image} alt={animal.id} />
+                        <div className="box">
+                            <strong>{animal.title}</strong>
+                            <strong>{animal.city}</strong>
+                        </div>
+                        <p>{animal.description}</p>
+                    </li>
+                )) }
+            </Listing>
       </Container>
   )
 }

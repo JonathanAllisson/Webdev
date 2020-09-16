@@ -4,20 +4,21 @@ export const Container = styled.div`
     margin: 0 auto;
     max-width: 1230px;
     padding: 0 20px 50px;
-    box-shadow: 0 0 35px #eee;
 
-    .filter-menu{
-        display: flex;
-        width: 100%;
-        margin-top: 20px;
-        justify-content: space-around;
-    }
-    .search-input{
+`;
+
+export const FilterMenu = styled.div`
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-around;
+
+    .search-input {
         margin: 0 10px;
+        padding-left: 10px;
         flex: 1;
         border: 1px solid #ccc;
     }
-
     select {
         height: 40px;
         border: 1px solid #ccc;
@@ -25,6 +26,9 @@ export const Container = styled.div`
         outline: none;
     }
 
+    span {
+        align-self: center;
+    }
 `;
 
 export const Listing = styled.ul`

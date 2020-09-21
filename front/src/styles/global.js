@@ -15,6 +15,8 @@ export default createGlobalStyle`
   
   body {
     -webkit-font-smoothing: antialiased;
+    background-color: #f5f7ff;
+    color: #2c2c51;
   }
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;

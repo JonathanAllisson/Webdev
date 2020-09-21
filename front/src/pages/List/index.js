@@ -2,6 +2,8 @@ import React  from 'react';
 
 import { Container, FilterMenu, Listing } from './styles';
 
+import { AiFillHeart } from 'react-icons/ai'
+
 function List() {
 
     const animals = [
@@ -45,7 +47,7 @@ function List() {
             "title": "gato preto",
             "city": "João Pessoa",
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3I8T9hUSbSlGYwM5Wo5kfBCT2nD1x0rAflg&usqp=CAU",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
         },
     ]
 
@@ -73,10 +75,19 @@ function List() {
                     <li key={animal.id}>
                         <img src={animal.image} alt={animal.id} />
                         <div className="box">
-                            <strong>{animal.title}</strong>
-                            <strong>{animal.city}</strong>
+                            <div className="box-top">
+                                <AiFillHeart />
+                                <div className="box-top-right">
+                                    <h3>{animal.city}</h3>
+                                    <span>Carteira de vacinação: </span> 
+                                    <span className="circle">S</span>
+                                </div>
+                            </div>
+                            <div className="box-bottom">
+                                <h4>{animal.title}</h4>
+                                <p>{animal.description}</p>
+                            </div>
                         </div>
-                        <p>{animal.description}</p>
                     </li>
                 )) }
             </Listing>

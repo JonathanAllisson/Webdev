@@ -2,9 +2,6 @@
 
 ```bash
 
-# Vá para a pasta do repositório
-$ cd src
-
 # Instale as dependências
 $ npm install ou yarn
 

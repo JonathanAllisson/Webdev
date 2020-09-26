@@ -14,8 +14,9 @@ export default createGlobalStyle`
   }
   
   body {
+    padding-top: 4rem;
     -webkit-font-smoothing: antialiased;
-    background-color: #f5f7ff;
+    background-color: #F3F3FB;
     color: #2c2c51;
   }
   body, input, textarea, button {
@@ -24,5 +25,9 @@ export default createGlobalStyle`
   button{
     cursor: pointer;
     border: 0;
+  }
+  a{
+    text-decoration: none;
+    color: #2c2c51;
   }
 `;

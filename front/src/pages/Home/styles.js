@@ -5,9 +5,8 @@ export const Container = styled.div`
     max-width: 1230px;
     padding: 0 20px 50px;
 
-    .box2{
+    > div{
         display: flex;
-        justify-content: space-between;
     }
 
 `;
@@ -45,12 +44,4 @@ export const Listing = styled.ul`
     grid-gap: 110px 30px;
     justify-content: center;
     list-style: none;
-`;
-
-export const Column = styled.div`
-    width: 550px;
-    border-radius: 10px;
-    margin: 20px 0 0 50px;
-    height: 700px;
-    background-color: #353533;
 `;

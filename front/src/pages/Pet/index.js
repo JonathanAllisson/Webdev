@@ -1,18 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import api from '../../services/api';
 
-import { Container, Panel, Gallery, Column, Comments } from './styles';
-import { useParams } from 'react-router-dom';
+import { Container, Panel, Gallery, Column, Comments, Dados } from './styles';
+import { useParams, useHistory } from 'react-router-dom';
 
 function Pet() {
 
     const { id } = useParams();
+    const history = useHistory();
     const [pet, setPet] = useState({});
 
     useEffect(() => {
+        var animal;
         async function loadPet(){
-            const animal = await api.get(`/post/${id}`);
-            setPet(animal.data);
+            try{
+                animal = await api.get(`/post/${id}`);
+                setPet(animal.data);
+            }catch(err){
+                history.push('/');
+            }
         }
 
         loadPet();
@@ -26,19 +32,21 @@ function Pet() {
                         <img alt={pet.id} src={`http://localhost:3333/files/${pet.img}`} />
                     </Gallery>
                 </Column>
-                <div>
+                <Dados>
                     <h2>{pet.title}</h2>
                     <p>{pet.description}</p>
-                    <h3>{pet.city}</h3>
-                    <h4>{pet.uf}</h4>
-                </div>
+                    <div>
+                        <h3>Cidade: </h3>
+                        <h3>{pet.city}</h3>
+                        <span>-</span>
+                        <h3>{pet.uf}</h3>
+                    </div>
+                </Dados>
             </Panel>
             <Comments>
                 <h1>Comentários:</h1>
                 <textarea 
-                    className="textComment"
-                    type="text"
-                    placeholder="Digite seu comentario"
+                    placeholder="Digite seu comentário"
                 />
                 <button>Comentar</button>
             </Comments>

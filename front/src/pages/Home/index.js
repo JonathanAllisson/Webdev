@@ -3,8 +3,7 @@ import api from '../../services/api';
 
 import { Container, FilterMenu, Listing } from './styles';
 
-
-
+import Sidebar from '../../components/Sidebar';
 import PetCard from '../../components/PetCard';
 
 function Home() {
@@ -40,11 +39,14 @@ function Home() {
                 </select>
             </FilterMenu>
 
-            <Listing>
-                { animals.map(animal => (
-                    <PetCard animal={animal} key={animal.id} />
-                )) }
-            </Listing>
+            <div>           
+                <Listing>
+                    { animals.map(animal => (
+                        <PetCard animal={animal} key={animal.id} />
+                        )) }
+                </Listing>
+                <Sidebar />
+            </div>
             
       </Container>
   )

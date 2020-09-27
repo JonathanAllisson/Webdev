@@ -59,3 +59,23 @@ export const Comments = styled.div`
         font-size: 20px;
     }
 `;
+
+export const Dados = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+
+    > p {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+`;

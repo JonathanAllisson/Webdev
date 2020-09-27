@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 1020px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
 `;
 
 export const Panel = styled.div`
@@ -32,3 +32,30 @@ export const Gallery = styled.div`
     }
 `;
 
+export const Comments = styled.div`  
+    
+    margin-top: 30px;
+    border-top: 1px solid #7A77FF;
+    
+    > h1 {
+        margin-top: 30px;
+    }
+
+    > textarea {
+        border: 1px dashed #7A77FF;
+        border-radius: 5px;
+        padding: 10px 30px;
+        width: 100%;
+        margin: 20px auto 0;
+        font-size: 20px;
+    }
+
+    > button {
+        padding: 20px 30px;
+        background: linear-gradient(45deg, #7A77FF, #310DFF);
+        color: #FFF;
+        border-radius: 10px;
+        float: right;
+        font-size: 20px;
+    }
+`;

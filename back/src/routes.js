@@ -13,5 +13,6 @@ routes.post('/', userController.create);
 routes.get('/', userController.index);
 routes.post('/post', upload.single('file'), postController.create);
 routes.get('/post', postController.index);
+routes.get('/post/:id', postController.get);
 
 module.exports = routes;

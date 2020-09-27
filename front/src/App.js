@@ -14,7 +14,7 @@ function App() {
         <Header/>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/pet" component={Pet} />
+          <Route exact path="/pet/:id" component={Pet} />
         </Switch>
         <GlobalStyled />
       </Router>

@@ -6,7 +6,7 @@ import { AiFillHeart } from 'react-icons/ai'
 
 function PetCard({ animal }) {
   return (
-      <Container>
+      <Container to={`/pet/${animal.id}`}>
             <img src={`http://localhost:3333/files/${animal.img}`} alt={animal.id} />
             <div className="box">
                 <div className="box-top">

@@ -1,6 +1,15 @@
 const connection = require('../database/connection');
 
 module.exports = {
+  async get(req, res) {
+    const { id } = req.params;
+    const post = await connection('posts').where('id', id);
+    if (post.length > 0) {
+      return res.status(200).json({ ...post[0] });
+    }
+    return res.status(404).json({ message: 'notfound' });
+  },
+
   async index(req, res) {
     const { type, order } = req.query;
     let posts;

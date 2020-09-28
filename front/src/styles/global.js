@@ -12,7 +12,7 @@ export default createGlobalStyle`
   html, body, #root{
     min-height: 100%;
   }
-  
+
   body {
     padding-top: 4rem;
     -webkit-font-smoothing: antialiased;

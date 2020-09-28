@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import history from './history'
+import history from './history';
 import GlobalStyled from './styles/global';
 
 import Header from './components/Header';
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Router history={history}>
-        <Header/>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/pet/:id" component={Pet} />

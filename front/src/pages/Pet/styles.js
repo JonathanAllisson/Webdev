@@ -9,16 +9,16 @@ export const Container = styled.div`
 
 export const Panel = styled.div`
     margin-top: 30px;
-    background: #FFF;
+    background: #fff;
     display: grid;
     grid-template-columns: 65fr 35fr;
-    border: 1px solid #7A77FF;
+    border: 1px solid #7a77ff;
     border-radius: 5px;
 `;
 
 export const Column = styled.div`
     &:first-child {
-        border-right: 1px solid #7A77FF;
+        border-right: 1px solid #7a77ff;
     }
 `;
 
@@ -32,17 +32,16 @@ export const Gallery = styled.div`
     }
 `;
 
-export const Comments = styled.div`  
-    
+export const Comments = styled.div`
     margin-top: 30px;
-    border-top: 1px solid #7A77FF;
-    
+    border-top: 1px solid #7a77ff;
+
     > h1 {
         margin-top: 30px;
     }
 
     > textarea {
-        border: 1px dashed #7A77FF;
+        border: 1px dashed #7a77ff;
         border-radius: 5px;
         padding: 10px 30px;
         width: 100%;
@@ -52,8 +51,8 @@ export const Comments = styled.div`
 
     > button {
         padding: 20px 30px;
-        background: linear-gradient(45deg, #7A77FF, #310DFF);
-        color: #FFF;
+        background: linear-gradient(45deg, #7a77ff, #310dff);
+        color: #fff;
         border-radius: 10px;
         float: right;
         font-size: 20px;
@@ -65,8 +64,6 @@ export const Dados = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    
 
     > p {
         margin-top: 20px;

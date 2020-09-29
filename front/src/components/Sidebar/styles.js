@@ -9,7 +9,7 @@ export const Container = styled.div`
         align-items: center;
 
         width: min(500px, 100%);
-        background: linear-gradient(45deg, #7A77FF, #310DFF);
+        background: linear-gradient(45deg, #7a77ff, #310dff);
 
         margin: 20px 0 0 30px;
         border-radius: 10px;
@@ -17,6 +17,6 @@ export const Container = styled.div`
 
     > h1 {
         margin-top: 50px;
-        color: #FFF;
+        color: #fff;
     }
 `;

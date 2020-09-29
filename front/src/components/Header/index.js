@@ -1,15 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
+import { AiOutlineUser, AiFillHeart } from 'react-icons/ai';
 import { Container } from './styles';
 
-import { AiOutlineUser, AiFillHeart } from 'react-icons/ai'
-
 function Header() {
-  return (
+    return (
         <Container>
             <nav>
-                <Link className="logo" to="/">AA</Link>
+                <Link className="logo" to="/">
+                    AA
+                </Link>
                 <div>
                     <Link to="/">
                         Login/Criar
@@ -22,7 +23,7 @@ function Header() {
                 </div>
             </nav>
         </Container>
-    )
+    );
 }
 
 export default Header;

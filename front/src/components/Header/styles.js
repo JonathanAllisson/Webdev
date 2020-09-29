@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    border-bottom: 1px solid #7A77FF;
+    border-bottom: 1px solid #7a77ff;
     position: fixed;
     width: 100%;
-    background: #F3F3FB;
+    background: #f3f3fb;
     top: 0;
     z-index: 1000;
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
             font-size: 35px;
             font-weight: 900;
         }
-        > div{
+        > div {
             display: flex;
             a {
                 font-weight: 400;
@@ -32,7 +32,7 @@ export const Container = styled.div`
                 align-items: center;
             }
 
-            svg{
+            svg {
                 font-size: 30px;
             }
         }

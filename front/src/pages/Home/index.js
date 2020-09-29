@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from 'react';
+import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 
 import { Container, FilterMenu, Listing } from './styles';
@@ -7,13 +7,12 @@ import Sidebar from '../../components/Sidebar';
 import PetCard from '../../components/PetCard';
 
 function Home() {
-
     const [animals, setAnimals] = useState([]);
-    const [type, setType] = useState("");
-    const [orderBy, setOrderBy] = useState("desc");
+    const [type, setType] = useState('');
+    const [orderBy, setOrderBy] = useState('desc');
 
     useEffect(() => {
-        async function loadAnimals(){
+        async function loadAnimals() {
             const listAnimals = await api.get(`post?type=${type}&order=${orderBy}`);
             setAnimals(listAnimals.data);
         }
@@ -21,35 +20,33 @@ function Home() {
         loadAnimals();
     }, [type, orderBy]);
 
-    
-  return (
+    return (
         <Container>
             <FilterMenu>
                 <span>Filtros: </span>
-                <select value={type} onChange={e => setType(e.target.value)} name="category">
+                <select value={type} onChange={(e) => setType(e.target.value)} name="category">
                     <option value="">Todos</option>
                     <option value="dog">Cachorros</option>
                     <option value="cat">Gatos</option>
                 </select>
-              <input type="text" className="search-input" placeholder="Digite sua cidade" />
+                <input type="text" className="search-input" placeholder="Digite sua cidade" />
                 <span>Ordenar por:</span>
-                <select value={orderBy} onChange={e => setOrderBy(e.target.value)} name="sort">
+                <select value={orderBy} onChange={(e) => setOrderBy(e.target.value)} name="sort">
                     <option value="desc">Mais recentes</option>
                     <option value="asc">Mais antigas</option>
                 </select>
             </FilterMenu>
 
-            <div>           
+            <div>
                 <Listing>
-                    { animals.map(animal => (
+                    {animals.map((animal) => (
                         <PetCard animal={animal} key={animal.id} />
-                        )) }
+                    ))}
                 </Listing>
                 <Sidebar />
             </div>
-            
-      </Container>
-  )
+        </Container>
+    );
 }
 
 export default Home;

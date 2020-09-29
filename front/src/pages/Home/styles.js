@@ -5,10 +5,9 @@ export const Container = styled.div`
     max-width: 1230px;
     padding: 0 20px 50px;
 
-    > div{
+    > div {
         display: flex;
     }
-
 `;
 
 export const FilterMenu = styled.div`
@@ -21,12 +20,12 @@ export const FilterMenu = styled.div`
         margin: 0 10px;
         padding-left: 10px;
         flex: 1;
-        border: 1px solid #7A77FF;
+        border: 1px solid #7a77ff;
         border-radius: 5px;
     }
     select {
         height: 40px;
-        border: 1px solid #7A77FF;
+        border: 1px solid #7a77ff;
         padding: 0 5px;
         outline: none;
         border-radius: 5px;
@@ -39,7 +38,7 @@ export const FilterMenu = styled.div`
 
 export const Listing = styled.ul`
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(270px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     margin: 20px 0;
     grid-gap: 110px 30px;
     justify-content: center;

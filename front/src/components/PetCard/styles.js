@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
     display: flex;
     border-radius: 5px;
-    background: #FFF;  
+    background: #fff;
     position: relative;
 
     img {
         width: 100%;
         height: 300px;
         border-radius: 5px;
-        border: 1px solid #7A77FF;
+        border: 1px solid #7a77ff;
     }
     .box {
         position: absolute;
@@ -22,9 +22,9 @@ export const Container = styled(Link)`
         height: 110px;
         display: flex;
         flex-direction: column;
-        border: 1px solid #7A77FF;
+        border: 1px solid #7a77ff;
         border-radius: 5px;
-        background: #FFF;
+        background: #fff;
         padding: 5px 10px;
 
         .box-top {
@@ -33,7 +33,7 @@ export const Container = styled(Link)`
             justify-content: space-between;
             align-items: center;
 
-            h3{
+            h3 {
                 font-size: 17px;
             }
             .circleGreen {
@@ -59,9 +59,9 @@ export const Container = styled(Link)`
             -webkit-box-orient: vertical;
         }
 
-        svg{
+        svg {
             font-size: 40px;
-            color: #CCC;
+            color: #ccc;
             cursor: pointer;
 
             &:hover {
@@ -69,10 +69,7 @@ export const Container = styled(Link)`
             }
         }
         p {
-            font-size: 14px;        
+            font-size: 14px;
         }
-        
     }
 `;
-
-

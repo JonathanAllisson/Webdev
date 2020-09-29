@@ -6,18 +6,15 @@ Adote um amigo é um site com a finalidade de encontrar lares para animais aband
 
 ## Telas
 - Listagem de animais para adoção
-  - [x] Ordenar por tipo de pet
-  - [x] Ordenar pelos mais antigos / mais novos
-  - [ ] Pesquisar por cidade
+  > Será possivel filtrar por cidade, tipo de animal, além de ser possível favoritar
 
-- Tela de Pet
-  - [x] Foto do pet e dados sobre o mesmo
-  - [ ] Possibilitar criação de comentários
-  - [ ] Link para whatsapp
-
-- Tela de Pets favoritados
-  - [ ] Todos os pets favoritados 
-
-- Login e cadastro
-  - [ ] Tela simples de login e cadasto
-  - [ ] Sistema de autenticação
+- Tela de animal
+  > Tela onde terá a foto do animal em questão, descrição, cidade e demais dados fornecidos por quem o cadastrou , além de comentários e um link de redirecionamento para o whatsapp.
+  
+- Cadastro de animal para adoção
+  > Nessa tela você irá fornecer foto, descrição, cidade e demais dados sobre o animal que será adotado
+  > 
+- Animais favoritados
+  > Nesta tela terão os animais favoritados, onde os que já tiverem encontrado um lar terão uma marcação diferente 
+- Login e Cadastro
+  > Telas simples de login e cadastro

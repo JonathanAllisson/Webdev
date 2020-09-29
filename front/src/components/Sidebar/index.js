@@ -4,10 +4,10 @@ import { Container } from './styles';
 
 function Sidebar() {
   return (
-    <Container>
-      <h1>Anuncie aqui:</h1>
-    </Container>
-  );
+        <Container>
+            <h1>Anuncie aqui:</h1>
+        </Container>
+    )
 }
 
 export default Sidebar;

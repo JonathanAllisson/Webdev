@@ -6,7 +6,7 @@ Adote um amigo é um site com a finalidade de encontrar lares para animais aband
 
 ## 🚧 Telas
 - Tela inicial com listagem de animais para adoção
-  - [x] Ordenar por tipo de pet
+  - [x] Filtrar por tipo de pet
   - [x] Ordenar pelos mais antigos / mais novos
   - [ ] Pesquisar por cidade
 

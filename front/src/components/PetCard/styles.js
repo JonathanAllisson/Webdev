@@ -23,7 +23,7 @@ export const Container = styled(Link)`
         display: flex;
         flex-direction: column;
         border: 1px solid #7a77ff;
-        border-radius: 5px;
+        border-radius: 10px 10px 5px 5px;
         background: #fff;
         padding: 5px 10px;
 

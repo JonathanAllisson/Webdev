@@ -14,6 +14,7 @@ function Home() {
     useEffect(() => {
         async function loadAnimals() {
             const listAnimals = await api.get(`post?type=${type}&order=${orderBy}`);
+            console.log(listAnimals.data)
             setAnimals(listAnimals.data);
         }
 
@@ -37,7 +38,7 @@ function Home() {
                 </select>
             </FilterMenu>
 
-            <div>
+            <div className="mid">
                 <Listing>
                     {animals.map((animal) => (
                         <PetCard animal={animal} key={animal.id} />

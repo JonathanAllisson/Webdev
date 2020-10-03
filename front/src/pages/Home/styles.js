@@ -5,8 +5,10 @@ export const Container = styled.div`
     max-width: 1230px;
     padding: 0 20px 50px;
 
-    > div {
+    .mid {
         display: flex;
+        padding-bottom: 150px;
+        border-bottom: 1px solid #7a77ff;
     }
 `;
 

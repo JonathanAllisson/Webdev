@@ -39,7 +39,7 @@ module.exports = {
         city,
         uf,
         created_at: date,
-        user_id: 1, // req.userId,
+        user_id: req.userId,
         img: filename,
       });
       return res.status(200).json(post);

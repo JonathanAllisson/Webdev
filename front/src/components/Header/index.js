@@ -16,7 +16,7 @@ function Header() {
                         Login/Criar
                         <AiOutlineUser />
                     </Link>
-                    <Link>
+                    <Link to="/">
                         Favoritados
                         <AiFillHeart />
                     </Link>

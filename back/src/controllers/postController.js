@@ -1,9 +1,16 @@
+const { where } = require('../database/connection');
 const connection = require('../database/connection');
 
 module.exports = {
   async get(req, res) {
     const { id } = req.params;
-    const post = await connection('posts').where('id', id);
+    const post = await connection
+      .select('posts.id', 'title', 'description', 'type', 'vaccinated', 'city', 'uf', 'created_at', 'img', 'user_id', 'name', 'email', 'whatsapp')
+      .from('posts')
+      .innerJoin('users', function() {
+        this.on('users.id', '=', 'posts.user_id')
+      })
+      .where('posts.id', id)
     if (post.length > 0) {
       return res.status(200).json({ ...post[0] });
     }

@@ -20,7 +20,7 @@ routes.get('/post', postController.index);
 routes.get('/post/:id', postController.get);
 routes.post('/login', sessionController.login);
 routes.get('/comment/:post_id', commentController.index);
-routes.delete('/comment/:id', commentController.delete);
+routes.delete('/comment/:id', auth, commentController.delete);
 routes.post('/comment', auth, commentController.create);
 
 module.exports = routes;

@@ -9,20 +9,21 @@ export const Container = styled.div`
       padding: 10px 30px;
       background: linear-gradient(45deg, #7a77ff, #310dff);
       color: #FFF;
-      width: 350px;
+      max-width: 350px;
       height: 70px;
       font-size: 25px;
+      margin: 0 auto;
       border-radius: 5px;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      transition: transform 1s;
 
       svg {
         font-size: 30px;
       }
 
       &:hover{
-        transition: transform 1s;
         transform: scale(1.2);
       }
     }
@@ -38,6 +39,14 @@ export const FilterMenu = styled.div`
     width: 100%;
     margin-top: 20px;
     justify-content: space-around;
+
+    @media (max-width: 530px){
+      display: flex;
+      flex-direction: column;
+      .search-input {
+        padding: 10px 30px;
+      }
+    }
 
     .search-input {
         margin: 0 10px;
@@ -62,8 +71,15 @@ export const FilterMenu = styled.div`
 export const Listing = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 20px 0;
+    margin: 20px auto;
     grid-gap: 110px 30px;
     justify-content: center;
     list-style: none;
+
+    @media (max-width: 900px){
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 630px){
+      grid-template-columns: 1fr;
+    }
 `;

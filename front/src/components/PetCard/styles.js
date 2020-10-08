@@ -6,6 +6,8 @@ export const Container = styled(Link)`
     border-radius: 5px;
     background: #fff;
     position: relative;
+    max-width: 380px;
+    min-width: 270px;
 
     img {
         width: 100%;

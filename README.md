@@ -1,4 +1,7 @@
-# Adote um amigo
+
+<div align="center">
+    <img src="./git/logoR.png">
+</div>
 
 ## 📄 Descrição
 

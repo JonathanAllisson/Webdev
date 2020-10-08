@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import dateFormat from 'dateformat';
 import api from '../../services/api';
+import { Context } from '../../context/AuthProvider';
+import { toast } from 'react-toastify';
 
 import { Container, Panel, Gallery, Column, Comments, Dados, Comment } from './styles';
 
 import { BiEdit, BiTrashAlt, BiArrowToBottom } from 'react-icons/bi';
 import { RiWhatsappLine } from 'react-icons/ri';
 
+
 function Pet() {
+    const { authenticated } = useContext(Context);
+
     const { id } = useParams();
     const history = useHistory();
     const [pet, setPet] = useState({});
@@ -30,6 +35,13 @@ function Pet() {
 
         loadPet();
     }, [comments]);
+
+    function handlesubmit(){
+      if(!authenticated){
+        toast.error('É necessário estar logado para comentar');
+      }
+
+    }
 
     return (
         <Container>
@@ -63,7 +75,7 @@ function Pet() {
             <Comments>
                 <h1>Comentários:</h1>
                 <textarea placeholder="Digite seu comentário" />
-                <button>Comentar</button>
+                <button onClick={() => handlesubmit()}>Comentar</button>
                 {comments.map((c) => (
                   <Comment key={c.id}>
                     <div className="icon"><span>{c.name[0]}</span></div>

@@ -1,14 +1,35 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    margin: 0 auto;
+    margin: 0 auto 50px;
     max-width: 1230px;
-    padding: 0 20px 50px;
+    padding: 30px 20px 50px;
+
+    > a {
+      padding: 10px 30px;
+      background: linear-gradient(45deg, #7a77ff, #310dff);
+      color: #FFF;
+      width: 350px;
+      height: 70px;
+      font-size: 25px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      svg {
+        font-size: 30px;
+      }
+
+      &:hover{
+        transition: transform 1s;
+        transform: scale(1.2);
+      }
+    }
 
     .mid {
-        display: flex;
-        padding-bottom: 150px;
-        border-bottom: 1px solid #7a77ff;
+      display: flex;
+      justify-content: space-between;
     }
 `;
 
@@ -40,7 +61,7 @@ export const FilterMenu = styled.div`
 
 export const Listing = styled.ul`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 20px 0;
     grid-gap: 110px 30px;
     justify-content: center;

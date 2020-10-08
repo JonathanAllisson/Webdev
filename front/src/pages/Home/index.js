@@ -5,6 +5,9 @@ import { Container, FilterMenu, Listing } from './styles';
 
 import Sidebar from '../../components/Sidebar';
 import PetCard from '../../components/PetCard';
+import { Link } from 'react-router-dom';
+
+import { FaCat, FaDog } from 'react-icons/fa';
 
 function Home() {
     const [animals, setAnimals] = useState([]);
@@ -23,6 +26,11 @@ function Home() {
 
     return (
         <Container>
+            <Link to="/add" >
+              <FaDog />
+              Adicionar um Pet
+              <FaCat />
+            </Link >
             <FilterMenu>
                 <span>Filtros: </span>
                 <select value={type} onChange={(e) => setType(e.target.value)} name="category">

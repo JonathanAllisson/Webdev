@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 1020px;
-    margin: 0 auto 30px;
+    margin: 0 auto 200px;
 `;
 
 export const Panel = styled.div`
@@ -122,6 +122,8 @@ export const Dados = styled.div`
 export const Comment = styled.div`
   display: flex;
   margin-top: 20px;
+  position: relative;
+
 
   .icon {
     display: flex;
@@ -145,6 +147,7 @@ export const Comment = styled.div`
     border: 1px solid #310dff;
     border-radius: 0px 20px 20px 20px;
     background-color: #FFF;
+
 
     p {
       margin-top: 10px;

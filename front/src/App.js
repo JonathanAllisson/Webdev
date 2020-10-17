@@ -6,6 +6,7 @@ import { AuthProvider } from './context/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Pet from './pages/Pet';
 import AddPet from './pages/AddPet';
@@ -20,6 +21,7 @@ function App() {
                     <Route exact path="/pet/:id" component={Pet} />
                     <Route exact path="/add" component={AddPet} />
                 </Switch>
+                <Footer />
                 <GlobalStyled />
                 <ToastContainer autoClose={3000} />
             </Router>

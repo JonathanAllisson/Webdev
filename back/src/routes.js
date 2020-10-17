@@ -18,6 +18,7 @@ routes.get('/', userController.index);
 routes.post('/post', auth, upload.single('file'), postController.create);
 routes.get('/post', postController.index);
 routes.get('/post/:id', postController.get);
+routes.delete('/post/:id', auth, postController.delete);
 routes.post('/login', sessionController.login);
 routes.get('/comment/:post_id', commentController.index);
 routes.delete('/comment/:id', auth, commentController.delete);

@@ -12,12 +12,13 @@ import { RiWhatsappLine } from 'react-icons/ri';
 
 
 function Pet() {
-    const { authenticated } = useContext(Context);
+    const { authenticated, user } = useContext(Context);
 
     const { id } = useParams();
     const history = useHistory();
     const [pet, setPet] = useState({});
     const [comments, setComments] = useState([]);
+    const [commentText, setCommentText] = useState('');
 
     useEffect(() => {
         let animal;
@@ -36,9 +37,18 @@ function Pet() {
         loadPet();
     }, [comments]);
 
-    function handlesubmit(){
+    async function handlesubmit(e){
+      e.preventDefault();
+      const headers = { Authorization: `Bearer ${user.token}` };
       if(!authenticated){
         toast.error('É necessário estar logado para comentar');
+      }
+      else if(commentText !== ""){
+        await api.post("comment", {
+          content: commentText,
+          post_id: id
+        }, headers);
+
       }
 
     }
@@ -74,16 +84,21 @@ function Pet() {
             </Panel>
             <Comments>
                 <h1>Comentários:</h1>
-                <textarea placeholder="Digite seu comentário" />
-                <button onClick={() => handlesubmit()}>Comentar</button>
+                <textarea
+                  placeholder="Digite seu comentário"
+                  type="text"
+                  value={commentText}
+                  onChange={e => setCommentText(e.target.value)}
+                />
+                <button onClick={(e) => handlesubmit(e)}>Comentar</button>
                 {comments.map((c) => (
                   <Comment key={c.id}>
                     <div className="icon"><span>{c.name[0]}</span></div>
                     <div className="comment">
-                      <div className="actions">
+                      {/* <div className="actions">
                         <BiEdit />
                         <BiTrashAlt />
-                      </div>
+                      </div> */}
                       <div className="actions">
                         <h4>{c.name}</h4>
                         <p>{c.content}</p>

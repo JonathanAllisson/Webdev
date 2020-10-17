@@ -54,4 +54,18 @@ module.exports = {
       return res.status(401).json({ message: err.message });
     }
   },
+
+  async delete(req, res) {
+    try {
+      const { id } = req.params;
+      await connection('posts').where({ id, user_id: req.userId }).delete();
+      const c = await connection('posts').where({id});
+      if(c.length > 0){
+        return res.status(403).json({ message: 'You are not allowed to do this'});
+      }
+      return res.status(200).json({ message: 'successfully deleted' });
+    } catch (err) {
+      return res.status(400).json({ err: err.message });
+    }
+  }
 };

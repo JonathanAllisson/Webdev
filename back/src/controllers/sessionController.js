@@ -10,7 +10,7 @@ const generateAuthToken = (user) => {
     },
     process.env.JWT_KEY || 'key',
     {
-      expiresIn: process.env.EXPIRESIN || '7d',
+      expiresIn: process.env.EXPIRESIN || '70d',
     }
   );
   return token;

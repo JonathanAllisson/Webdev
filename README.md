@@ -15,9 +15,12 @@ Adote um amigo é um site com a finalidade de encontrar lares para animais aband
 
 - Tela de Pet
   - [x] Foto do pet e dados sobre o mesmo
-  - [ ] Possibilitar criação de comentários
-  - [ ] Invalidar comentários de quem não estiver logado
-  - [ ] Link para whatsapp
+  - [x] Possibilitar criação de comentários
+  - [x] Invalidar comentários de quem não estiver logado
+  - [x] Link para whatsapp
+
+- Tela de criar publicaçao
+  - [x] Possibilitar a criação de uma publicação 
 
 - Tela de Pets favoritados
   - [ ] Todos os pets favoritados 

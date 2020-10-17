@@ -13,7 +13,7 @@ function Header() {
         <Container>
             <nav>
                 <Link className="logo" to="/">
-                    AA
+                    AuA
                 </Link>
                 <div>
                     <Link to="/">

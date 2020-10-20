@@ -7,6 +7,10 @@
 
 Adote um amigo é um site com a finalidade de encontrar lares para animais abandonados ou simplesmente sem donos, o grande objetivo real é juntar pessoas que querem adotar um animal com pessoas que têm esse animal e querem encontrar um lar para ele
 
+<div align="center">
+    <img src="./git/Aua1.gif">
+</div>
+
 ## 🚧 Telas
 - Tela inicial com listagem de animais para adoção
   - [x] Filtrar por tipo de pet

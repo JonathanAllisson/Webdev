@@ -24,6 +24,13 @@ export const Container = styled.div`
         }
         > div {
             display: flex;
+            .user {
+              font-weight: 400;
+              font-size: 20px;
+              margin-left: 30px;
+              display: flex;
+              align-items: center;
+            }
             a {
                 font-weight: 400;
                 font-size: 20px;

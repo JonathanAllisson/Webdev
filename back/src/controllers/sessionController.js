@@ -35,6 +35,7 @@ const login = async (req, res) => {
     const token = generateAuthToken(user[0]);
 
     const data = {
+      name: user[0].name,
       id: user[0].id,
       email,
       token,

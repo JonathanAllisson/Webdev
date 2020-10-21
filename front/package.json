@@ -8,8 +8,9 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "dateformat": "^3.0.3",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.8",
+    "react-dom": "^16.8",
+    "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-toastify": "^6.0.9",
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^26.0.15",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.12.0",
@@ -46,6 +48,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-react-hooks": "^4.1.2",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "react-test-renderer": "^17.0.0"
   }
 }

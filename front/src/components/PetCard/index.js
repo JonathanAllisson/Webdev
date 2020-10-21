@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { AiFillHeart } from 'react-icons/ai';
 import { Container } from './styles';
 
 function PetCard({ animal }) {
     return (
-        <Container to={`/pet/${animal.id}`}>
-            <img src={`http://localhost:3333/files/${animal.img}`} alt={animal.id} />
+        <Container>
+            <Link to={`/pet/${animal.id}`}>
+              <img src={`http://localhost:3333/files/${animal.img}`} alt={animal.id} />
+            </Link>
             <div className="box">
                 <div className="box-top">
                     <AiFillHeart />

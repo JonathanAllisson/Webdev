@@ -10,5 +10,7 @@ $ npm install ou yarn
 # Execute a aplicação em modo de desenvolvimento
 $ npm run start ou yarn start
 
+#Executar os testes
+$ npm run test ou yarn test
 
 ```

@@ -1,13 +1,15 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-export const Container = styled(Link)`
+export const Container = styled.div`
     display: flex;
     border-radius: 5px;
     position: relative;
     max-width: 380px;
     min-width: 270px;
 
+    a {
+      width: 100%;
+    }
     img {
         width: 100%;
         height: 300px;

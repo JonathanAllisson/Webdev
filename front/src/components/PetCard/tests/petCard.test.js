@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import PetCard from '../components/PetCard';
+import PetCard from '..';
 import { StaticRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 

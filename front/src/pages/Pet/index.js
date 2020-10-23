@@ -14,7 +14,8 @@ function Pet() {
     const [pet, setPet] = useState({});
 
     useEffect(() => {
-        let animal;
+      window.scrollTo(0, 0);
+      let animal;
         async function loadPet() {
             try {
                 animal = await api.get(`/post/${id}`);

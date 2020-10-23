@@ -7,6 +7,18 @@ export const Container = styled.div`
     max-width: 380px;
     min-width: 270px;
 
+    button {
+      position: absolute;
+      background: transparent;
+      right: 5px;
+      top: 5px;
+
+      svg {
+        font-size: 20px;
+        color: #2c2c51;
+      }
+    }
+
     a {
       width: 100%;
     }

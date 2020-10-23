@@ -15,6 +15,7 @@ function Home() {
     const [orderBy, setOrderBy] = useState('desc');
 
     useEffect(() => {
+      window.scrollTo(0, 0);
         async function loadAnimals() {
             const listAnimals = await api.get(`post?type=${type}&order=${orderBy}`);
             console.log(listAnimals.data)
@@ -23,6 +24,13 @@ function Home() {
 
         loadAnimals();
     }, [type, orderBy]);
+
+    async function handleDelete(idPost){
+      await api.delete(`post/${idPost}`);
+
+      const filterPosts = animals.filter(a => a.id !== idPost);
+      setAnimals(filterPosts);
+    }
 
     return (
         <Container>
@@ -49,7 +57,7 @@ function Home() {
             <div className="mid">
                 <Listing>
                     {animals.map((animal) => (
-                        <PetCard animal={animal} key={animal.id} />
+                        <PetCard animal={animal} key={animal.id} handleDelete={handleDelete} />
                     ))}
                 </Listing>
                 <Sidebar />

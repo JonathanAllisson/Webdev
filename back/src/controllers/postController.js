@@ -18,17 +18,16 @@ module.exports = {
   },
 
   async index(req, res) {
-    const { type, order } = req.query;
+    const { type, order, pattern } = req.query;
     let posts;
+    posts = await connection('posts')
+        .select('*')
+        .orderBy('created_at', order);
     if (type) {
-      posts = await connection('posts')
-        .select('*')
-        .where('type', type)
-        .orderBy('created_at', order);
-    } else {
-      posts = await connection('posts')
-        .select('*')
-        .orderBy('created_at', order);
+      posts = posts.filter(p => p['type'] === type)
+    }
+    if(pattern){
+      posts = posts.filter(p => p['city'].toLowerCase().includes(pattern.toLowerCase()));
     }
     return res.status(200).json(posts);
   },

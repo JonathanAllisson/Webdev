@@ -7,19 +7,54 @@ function AuthProvider({ children }) {
 
   const [user, setUser] = useState(null);
   useEffect(() => {
-    setUser({
-      "name": "Tester",
-      "id": 3,
-      "email": "user3@gmail.com",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJpYXQiOjE2MDI4MTY5MjIsImV4cCI6MTYwODg2NDkyMn0.kCxyWj2-sjaBCp1-1YPkzVubLnu4V3eS-6IuytGMamo"
-    });
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJpYXQiOjE2MDI4MTY5MjIsImV4cCI6MTYwODg2NDkyMn0.kCxyWj2-sjaBCp1-1YPkzVubLnu4V3eS-6IuytGMamo";
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-
+    const userls = localStorage.getItem('@AuAUser');
+    setUser(userls);
+    const token = localStorage.getItem('@AuAToken');
+    if (token) {
+        api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
+    }
   },[]);
 
+  const signout = () => {
+    setUser(null);
+    localStorage.clear();
+  }
+
+  const signup = async(d) => {
+    var tmp = []
+    for(let x in d){
+      tmp.push(d[x])
+    }
+    var data = {
+      "name": tmp[0],
+      "email": tmp[1],
+      "whatsapp": tmp[2],
+      "password": tmp[3]
+    };
+    const res = await api.post('/', data);
+    return res;
+  }
+
+  const signin = async(d) => {
+    var tmp = []
+    for(let x in d){
+      tmp.push(d[x])
+    }
+    var data = {
+      "email": tmp[0],
+      "password": tmp[1]
+    };
+    const res = await api.post('/login', data);
+    const token = res.data.token;
+    await localStorage.setItem('@AuAUser', JSON.stringify(res.data));
+    await localStorage.setItem('@AuAToken', JSON.stringify(token));
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+    setUser(res.data);
+    return res;
+  }
+
   return (
-    <Context.Provider value={{authenticated: !!user, user}}>
+    <Context.Provider value={{authenticated: !!user, user, signin, signup, signout}}>
       {children}
     </Context.Provider>
   )

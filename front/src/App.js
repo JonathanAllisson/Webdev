@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Pet from './pages/Pet';
 import AddPet from './pages/AddPet';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
     return (
@@ -20,6 +22,8 @@ function App() {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/pet/:id" component={Pet} />
                     <Route exact path="/add" component={AddPet} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/register" component={Register} />
                 </Switch>
                 <Footer />
                 <GlobalStyled />

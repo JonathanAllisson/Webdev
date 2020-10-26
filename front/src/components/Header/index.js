@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AiOutlineUser, AiFillHeart } from 'react-icons/ai';
+import { AiOutlineUser, AiFillHeart, AiOutlinePoweroff } from 'react-icons/ai';
 import { Container } from './styles';
 
 import { Context } from '../../context/AuthProvider';
 
 function Header() {
-    const { authenticated, user } = useContext(Context);
+    const { authenticated, user, signout } = useContext(Context);
 
     return (
         <Container>
@@ -17,17 +17,26 @@ function Header() {
                 </Link>
                 <div>
                     {authenticated ? (
-                      <span className="user">Bem vindo {user.name}</span>
+                      <>
+                        <span>
+                          Bem vindo {user.name}
+                          <AiOutlineUser />
+                        </span>
+                        <Link to="/">
+                            Favoritados
+                            <AiFillHeart />
+                        </Link>
+                        <button onClick={signout}>
+                          sair
+                          <AiOutlinePoweroff />
+                        </button>
+                      </>
                     ) : (
-                      <Link to="/">
-                          Login/Criar
+                      <Link to="/login">
+                          Login/Criar Conta
                           <AiOutlineUser />
                       </Link>
                     )}
-                    <Link to="/">
-                        Favoritados
-                        <AiFillHeart />
-                    </Link>
                 </div>
             </nav>
         </Container>

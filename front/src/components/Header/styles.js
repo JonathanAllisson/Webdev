@@ -24,23 +24,36 @@ export const Container = styled.div`
         }
         > div {
             display: flex;
-            .user {
-              font-weight: 400;
-              font-size: 20px;
-              margin-left: 30px;
-              display: flex;
-              align-items: center;
-            }
-            a {
+            a, button, span {
                 font-weight: 400;
                 font-size: 20px;
                 margin-left: 30px;
                 display: flex;
                 align-items: center;
+                position: relative;
+                overflow: hidden;
+                transition: all 1s;
+
+                &:before{
+                  content: "";
+                  position: absolute;
+                  width: 100%;
+                  height: 3px;
+                  background: #310dff;
+                  bottom: 0px;
+                  left: 0px;
+                  transform: translateX(-100%);
+                  transition: all 1s;
+
+                }
+                &:hover:before {
+                  transform: translateX(0%);
+                }
             }
 
             svg {
-                font-size: 30px;
+                font-size: 20px;
+                margin-left: 5px;
             }
         }
     }

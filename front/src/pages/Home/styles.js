@@ -5,7 +5,7 @@ export const Container = styled.div`
     max-width: 1230px;
     padding: 30px 20px 50px;
 
-    > a {
+    > button {
       padding: 10px 30px;
       background: linear-gradient(45deg, #7a77ff, #310dff);
       color: #FFF;

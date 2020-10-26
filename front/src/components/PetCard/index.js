@@ -2,7 +2,6 @@ import React, { useEffect, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context/AuthProvider';
 import Swal from 'sweetalert2';
-import api from '../../services/api';
 
 import { AiFillHeart, AiFillDelete } from 'react-icons/ai';
 import { Container } from './styles';
@@ -15,7 +14,6 @@ function PetCard({ animal, handleDelete }) {
   useEffect(() => {
     if(authenticated){
       if(user.id === animal.user_id){
-        console.log(user.id, animal.user_id);
         setDelectable(true);
       }
     }

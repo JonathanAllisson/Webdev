@@ -30,6 +30,9 @@ function CommentsArea({ id }) {
         content: commentText,
         post_id: id
       });
+      setCommentText('');
+      const c = await api.get(`/comment/${id}`);
+      setComments(c.data);
     }
   }
 

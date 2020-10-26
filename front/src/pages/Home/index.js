@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import api from '../../services/api';
+import { toast } from 'react-toastify';
 
 import { Container, FilterMenu, Listing } from './styles';
 
 import Sidebar from '../../components/Sidebar';
 import PetCard from '../../components/PetCard';
-import { Link } from 'react-router-dom';
+import { Context } from '../../context/AuthProvider';
 
 import { FaCat, FaDog } from 'react-icons/fa';
 
-function Home() {
+function Home({ history }) {
+
+    const { authenticated } = useContext(Context);
+
     const [animals, setAnimals] = useState([]);
     const [type, setType] = useState('');
+    const [searchCity, setSearchCity] = useState('');
     const [orderBy, setOrderBy] = useState('desc');
 
     useEffect(() => {
@@ -25,6 +30,17 @@ function Home() {
         loadAnimals();
     }, [type, orderBy]);
 
+    useEffect(() => {
+      async function loadCity(){
+        clearTimeout(searchTimer);
+        var searchTimer = setTimeout(() => {
+          api.get(`post?type=${type}&order=${orderBy}&pattern=${searchCity}`)
+            .then( l => setAnimals(l.data));
+        }, 1000);
+      }
+      loadCity();
+    }, [searchCity])
+
     async function handleDelete(idPost){
       await api.delete(`post/${idPost}`);
 
@@ -32,13 +48,22 @@ function Home() {
       setAnimals(filterPosts);
     }
 
+    async function redirectAddPet(){
+      if(authenticated){
+        history.push('/add');
+      }
+      else {
+        toast.error('É necessário estar logado para adicionar um pet');
+      }
+    }
+
     return (
         <Container>
-            <Link to="/add" >
+            <button onClick={() => redirectAddPet()}>
               <FaDog />
               Adicionar um Pet
               <FaCat />
-            </Link >
+            </button >
             <FilterMenu>
                 <span>Filtros: </span>
                 <select value={type} onChange={(e) => setType(e.target.value)} name="category">
@@ -46,7 +71,13 @@ function Home() {
                     <option value="dog">Cachorros</option>
                     <option value="cat">Gatos</option>
                 </select>
-                <input type="text" className="search-input" placeholder="Digite sua cidade" />
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Digite sua cidade"
+                  value={searchCity}
+                  onChange={e => setSearchCity(e.target.value)}
+                />
                 <span>Ordenar por:</span>
                 <select value={orderBy} onChange={(e) => setOrderBy(e.target.value)} name="sort">
                     <option value="desc">Mais recentes</option>

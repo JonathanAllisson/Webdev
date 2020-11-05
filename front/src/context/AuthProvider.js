@@ -6,6 +6,8 @@ const Context = createContext();
 function AuthProvider({ children }) {
 
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const userls = localStorage.getItem('@AuAUser');
     setUser(userls);
@@ -13,6 +15,7 @@ function AuthProvider({ children }) {
     if (token) {
         api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
     }
+    setLoading(false);
   },[]);
 
   const signout = () => {
@@ -21,6 +24,7 @@ function AuthProvider({ children }) {
   }
 
   const signup = async(d) => {
+    setLoading(true);
     var tmp = []
     for(let x in d){
       tmp.push(d[x])
@@ -32,10 +36,12 @@ function AuthProvider({ children }) {
       "password": tmp[3]
     };
     const res = await api.post('/', data);
+    setLoading(false)
     return res;
   }
 
   const signin = async(d) => {
+    setLoading(true);
     var tmp = []
     for(let x in d){
       tmp.push(d[x])
@@ -50,11 +56,12 @@ function AuthProvider({ children }) {
     await localStorage.setItem('@AuAToken', JSON.stringify(token));
     api.defaults.headers.Authorization = `Bearer ${token}`;
     setUser(res.data);
+    setLoading(false);
     return res;
   }
 
   return (
-    <Context.Provider value={{authenticated: !!user, user, signin, signup, signout}}>
+    <Context.Provider value={{authenticated: !!user, user, signin, signup, signout, loading}}>
       {children}
     </Context.Provider>
   )

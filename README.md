@@ -1,4 +1,9 @@
-
+<p  align="center">
+  <img  alt="GitHub language count"  src="https://img.shields.io/github/languages/count/JonathanAllisson/Webdev">
+  <img  alt="Repository size"  src="https://img.shields.io/github/repo-size/JonathanAllisson/Webdev">
+  <img  alt="GitHub last commit"  src="https://img.shields.io/github/last-commit/JonathanAllisson/Webdev">
+  <img  alt="License"  src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
 <div align="center">
     <img src="./git/logoR.png">
 </div>

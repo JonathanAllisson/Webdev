@@ -5,24 +5,13 @@
 # Instale as dependências
 $ npm install ou yarn
 
+# Execute para popular o bd
+$ npx knex migrate:latest
+# E depois:
+$ npx knex seed:run
+
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev ou yarn dev
 
-
 ```
 
-#### Exemplo de rota get e post
-
-```bash
-# Get:
-localhost:3333/
-
-# Post:
-localhost:3333/
-{
-	"name": "user1",
-	"email": "user1@gmail.com",
-	"password": "password",
-	"whatsapp": "808088888"
-}
-```

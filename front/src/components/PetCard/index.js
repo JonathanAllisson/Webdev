@@ -65,7 +65,7 @@ function PetCard({ animal, handleDelete }) {
                     <div className="box-top-right">
                         <h4>{animal.city}</h4>
                         <span>Carteira de vacinação: </span>
-                        {animal.vaccinated === 'true' ? (
+                        {animal.vaccinated ? (
                             <span className="circleGreen">S</span>
                         ) : (
                             <span className="circleRed">N</span>

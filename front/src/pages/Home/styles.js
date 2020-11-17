@@ -5,7 +5,13 @@ export const Container = styled.div`
     max-width: 1230px;
     padding: 30px 20px 50px;
 
-    > button {
+    .buttonAndSearch{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1230px;
+
+      > button {
       padding: 10px 30px;
       background: linear-gradient(45deg, #7a77ff, #310dff);
       color: #FFF;
@@ -26,46 +32,43 @@ export const Container = styled.div`
       &:hover{
         transform: scale(1.2);
       }
+
     }
+    .search{
+      display: flex;
+      align-items: center;
+      background: #FFF;
+      padding-right: 10px;
+      border-radius: 5px;
+      input {
+        padding: 15px 10px;
+        border-radius: 5px;
+        border: 1px;
+      }
+      svg {
+        font-size: 20px;
+      }
+    }
+  }
 
     .mid {
       display: flex;
       justify-content: space-between;
+      flex-direction: row-reverse;
     }
-`;
-
-export const FilterMenu = styled.div`
-    display: flex;
-    width: 100%;
-    margin-top: 20px;
-    justify-content: space-around;
-
-    @media (max-width: 530px){
-      display: flex;
+  @media (max-width: 1100px){
+    .mid{
       flex-direction: column;
-      .search-input {
-        padding: 10px 30px;
-      }
     }
-
-    .search-input {
-        margin: 0 10px;
-        padding-left: 10px;
-        flex: 1;
-        border: 1px solid #7a77ff;
-        border-radius: 5px;
+  }
+  @media (max-width: 610px){
+    .buttonAndSearch{
+      flex-direction: column;
     }
-    select {
-        height: 40px;
-        border: 1px solid #7a77ff;
-        padding: 0 5px;
-        outline: none;
-        border-radius: 5px;
+    .search{
+      margin-top: 20px;
     }
-
-    span {
-        align-self: center;
-    }
+  }
 `;
 
 export const Listing = styled.ul`

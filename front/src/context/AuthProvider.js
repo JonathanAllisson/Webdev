@@ -10,7 +10,7 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const userls = localStorage.getItem('@AuAUser');
-    setUser(userls);
+    setUser(JSON.parse(userls));
     const token = localStorage.getItem('@AuAToken');
     if (token) {
         api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;

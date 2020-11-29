@@ -38,12 +38,12 @@ export const Container = styled.div`
                   content: "";
                   position: absolute;
                   width: 100%;
-                  height: 3px;
+                  height: 2px;
                   background: #310dff;
                   bottom: 0px;
                   left: 0px;
                   transform: translateX(-100%);
-                  transition: all 1s;
+                  transition: all 0.5s;
 
                 }
                 &:hover:before {

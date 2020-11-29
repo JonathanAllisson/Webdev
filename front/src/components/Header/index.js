@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AiOutlineUser, AiFillHeart, AiOutlinePoweroff } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlinePoweroff } from 'react-icons/ai';
 import { Container } from './styles';
 
 import { Context } from '../../context/AuthProvider';
@@ -22,10 +22,6 @@ function Header() {
                           Bem vindo {user.name}
                           <AiOutlineUser />
                         </span>
-                        <Link to="/">
-                            Favoritados
-                            <AiFillHeart />
-                        </Link>
                         <button onClick={signout}>
                           sair
                           <AiOutlinePoweroff />
